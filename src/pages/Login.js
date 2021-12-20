@@ -1,21 +1,21 @@
-import React from 'react'
 import HealthImage from '../images/health.jpg'
 
 const Login = () => {
+
     return (
         <section className="flex relative w-full h-full items-center">
             <div className="w-full text-center">
                 <h2 className="uppercase text-2xl text-donor-strawberry font-bold mb-14">Masuk</h2>
-                <form action="POST">
+                <form>
                     <div>
-                        <input className="mb-6 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry bg-gray-200" placeholder="Email" type="text" />
+                        <input className="mb-6 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry bg-gray-200" placeholder="Email" type="text" required />
                     </div>
                     <div>
-                        <input className="border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry bg-gray-200" placeholder="Password" type="password" />
+                        <input className="border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry bg-gray-200" placeholder="Password" type="password"  required />
                     </div>
 
                     <div>
-                        <button className="bg-donor-red text-white py-2 px-5 mt-6 mb-3 rounded-full">Login</button>
+                        <button type="submit" className="bg-donor-red text-white py-2 px-5 mt-6 mb-3 rounded-full">Login</button>
                     </div>
                 </form>
             </div>

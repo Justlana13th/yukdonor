@@ -2,9 +2,10 @@ import Home from "./pages/Home";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ListPendonor from './pages/ListPendonor';
 import Form from './pages/Form';
-import Tentang from './pages/Tentang';
 import SignUp from './pages/SignUp';
 import Login from "./pages/Login";
+
+
 
 function App() {
   return (
@@ -20,9 +21,6 @@ function App() {
                     </Route>
                     <Route path="/form">
                         <Form/>
-                    </Route>
-                    <Route path="/tentang">
-                        <Tentang/>
                     </Route>
                     <Route path="/signup">
                         <SignUp/>

@@ -13,7 +13,6 @@ const Header = () => {
                         <Link className="hover:text-donor-strawberry" to="/">Home</Link>
                         <Link className="hover:text-donor-strawberry" to="/list-pendonor">List Pendonor</Link>
                         <Link className="hover:text-donor-strawberry" to="/form">Form</Link>
-                        <Link className="hover:text-donor-strawberry" to="/tentang">Tentang</Link>
                         {/* <li className="cursor-pointer"><Link To="/list-pendonor">List Pendonor</Link></li>
                         <li path="/form">Form</li>
                         <li className="cursor-pointer" path="/tentang">Tentang</li> */}
