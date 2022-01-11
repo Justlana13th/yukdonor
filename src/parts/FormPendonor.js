@@ -41,7 +41,21 @@ const FormPendonor = () => {
                 <input className="mb-4 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry" placeholder="Umur" type="number" onChange={(event) => {newUmur(event.target.value)}}/>      
                 </div>
                 <div>
-                    <input className="mb-4 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry" placeholder="Golongan Darah" type="text" onChange={(event) => {newGolonganDarah(event.target.value)}}/>
+                    <label className='mr-4 text-gray-500'>Golongan Darah</label>
+                    <select className="mb-4 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry" onChange={(event) => {
+                        const selectedGD = event.target.value;
+                        newGolonganDarah(selectedGD);
+                    }}>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                    {/* <input className="mb-4 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry" placeholder="Golongan Darah" type="text" onChange={(event) => {newGolonganDarah(event.target.value)}}/> */}
                 </div>
                 <div>
                     <input className="mb-4 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry" placeholder="Provinsi" type="text" onChange={(event) => {newProvinsi(event.target.value)}}/>
@@ -63,67 +77,54 @@ const FormPendonor = () => {
                    
             </form>
 
-            {users.map((user) => {
+            {/* {users.map((user) => {
                 return (
-                    <div>
-                        <section className="mb-20 container">
+
+                    <div className="mb-20" key={user.id}>
             <div className="border-2 shadow-sm w-5/12 items-center pl-2 pt-2 pb-2">
                 <table className="table-auto">
                     <tbody className="">
-                        <tr>
-                            <td>Nama</td>
-                            <td>:</td>
-                            <td>{user.nama}</td>
-                        </tr>
-                        <tr>
-                            <td>Umur</td>
-                            <td>:</td>
-                            <td>{user.umur}</td>
-                        </tr>
-                        <tr>
-                            <td>Golongan Darah</td>
-                            <td>:</td>
-                            <td>{user.golongandarah}</td>
-                        </tr>
-                        <tr>
-                            <td>Provinsi</td>
-                            <td>:</td>
-                            <td>{user.provinsi}</td>
-                        </tr>
-                        <tr>
-                            <td>Kecamatan</td>
-                            <td>:</td>
-                            <td>{user.kecamatan}</td>
-                        </tr>
-                        <tr>
-                            <td>Kontak</td>
-                            <td>:</td>
-                            <td>{user.kontak}</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat</td>
-                            <td>:</td>
-                            <td>{user.alamat}</td>
-                        </tr>
+                    <tr>
+                                            <td>Nama</td>
+                                            <td>:</td>
+                                            <td>{user.nama}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Umur</td>
+                                            <td>:</td>
+                                            <td>{user.umur}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Golongan Darah</td>
+                                            <td>:</td>
+                                            <td>{user.golongandarah}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Provinsi</td>
+                                            <td>:</td>
+                                            <td>{user.provinsi}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kecamatan</td>
+                                            <td>:</td>
+                                            <td>{user.kecamatan}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kontak</td>
+                                            <td>:</td>
+                                            <td>{user.kontak}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alamat</td>
+                                            <td>:</td>
+                                            <td>{user.alamat}</td>
+                                        </tr>
                     </tbody>
                 </table>
-{/* 
-                <div className="py-4 text-center">
-                    <button className="py-2 px-6 bg-donor-strawberry uppercase text-white rounded-full">Hubungi</button>
-                </div> */}
-            </div>
-        </section>
-                        {/* {" "}
-                        <h1>Nama: {user.nama}</h1>
-                        <h1>Umur: {user.umur}</h1>
-                        <h1>Golongan Darah: {user.golongandarah}</h1>
-                        <h1>Provinsi: {user.provinsi}</h1>
-                        <h1>Kecamatan: {user.kecamatan}</h1>
-                        <h1>Kontak: {user.kontak}</h1>
-                        <h1>alamat: {user.alamat}</h1> */}
+        </div>
                     </div>
                 )
-            })}
+            })} */}
         </section>
     )
 }
