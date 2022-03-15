@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
+import {getAuth} from 'firebase/auth';
 import {getFirestore} from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -16,22 +15,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 export const db = getFirestore(app);
-
-
-export function signup(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
-}
-
-//custom hook
-export function useAuth() {
-    const [currentUser, setCurrentUser] = useState();
-
-    useEffect(() => {
-       const unsub = onAuthStateChanged(auth, user => setCurrentUser(user));
-       return unsub;
-    }, [])
-
-    return currentUser;
-}

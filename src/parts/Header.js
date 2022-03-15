@@ -1,7 +1,16 @@
 import YukDonor from '../images/YukDonor.png';
 import {Link} from "react-router-dom";
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const Header = () => {
+
+    const handleSignOut = () => {
+        signOut(auth).catch((err) => {
+            alert(err.message);
+        });
+    };
+
     return (
         <header>
             <div className="flex justify-between items-center py-4 mt-4 container">
@@ -17,11 +26,43 @@ const Header = () => {
                         <li path="/form">Form</li>
                         <li className="cursor-pointer" path="/tentang">Tentang</li> */}
                     </ul>
+
                     <div>
-                        <Link to="/signup">
+                        <button className="py-2 px-4 bg-donor-red hover:bg-donor-strawberry transition duration-200 text-white rounded-full uppercase" onClick={handleSignOut}>Log Out</button>
+                    </div>
+
+                    <div>
+                        <Link to="/login">
                         <button className="py-2 px-4 bg-donor-red hover:bg-donor-strawberry transition duration-200 text-white rounded-full uppercase">Masuk</button>
                         </Link>
                     </div>
+
+                    {/* <div>
+                        {(() => {
+                            if(!user){
+                                <button className="py-2 px-4 bg-donor-red hover:bg-donor-strawberry transition duration-200 text-white rounded-full uppercase" onClick={handleSignOut}>Log Out</button>
+                            } else {
+                                <Link to="/login">
+                        <button className="py-2 px-4 bg-donor-red hover:bg-donor-strawberry transition duration-200 text-white rounded-full uppercase">Masuk</button>
+                        </Link>
+                            }
+                        })}
+                    </div> */}
+                        
+                     {/* if(!user) {
+                        <div>
+                        <button className="py-2 px-4 bg-donor-red hover:bg-donor-strawberry transition duration-200 text-white rounded-full uppercase" onClick={handleSignOut}>Log Out</button>
+                        </div>
+                    } else {
+                        <div>
+                        <Link to="/login">
+                        <button className="py-2 px-4 bg-donor-red hover:bg-donor-strawberry transition duration-200 text-white rounded-full uppercase">Masuk</button>
+                        </Link>
+                        </div>
+                    }
+                     */}
+                
+
                     
             </div>
             </header>
