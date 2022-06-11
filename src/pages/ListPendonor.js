@@ -9,8 +9,9 @@ const ListPendonor = () => {
         <div>
             <Header/>
             {/* <Dropdown/> */}
-            <div className='flex justify-items-center'>
+            <div className=''>
                 <Cards/>
+                
             </div>
             <Footer/>
         </div>

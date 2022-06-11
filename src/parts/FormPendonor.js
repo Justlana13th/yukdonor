@@ -8,7 +8,7 @@ const FormPendonor = () => {
     const [nama, newNama] = useState("")
     const [umur, newUmur] = useState(0)
     const [golonganDarah, newGolonganDarah] = useState("")
-    const [provinsi, newProvinsi] = useState("")
+    const [provinsi, newProvinsi] = useState([])
     const [kecamatan, newKecamatan] = useState("")
     const [kontak, newKontak] = useState(0)
     const [alamat, newAlamat] = useState("")
@@ -21,6 +21,15 @@ const FormPendonor = () => {
 
         history.push("/list-pendonor");
     }
+
+    useEffect(() => {
+        const getprovinsi = async() => {
+            const resprovinsi = await fetch("https://ibnux.github.io/data-indonesia/provinsi.json");
+            const resprov = await resprovinsi.json();
+            newProvinsi(await resprov);
+        }
+        getprovinsi();
+    },[]);
 
     useEffect(() => {
         const getUsers = async () => {
@@ -58,6 +67,15 @@ const FormPendonor = () => {
                     {/* <input className="mb-4 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry" placeholder="Golongan Darah" type="text" onChange={(event) => {newGolonganDarah(event.target.value)}}/> */}
                 </div>
                 <div>
+                    {/* <label>Provinsi</label>
+                    <select>
+                        <option value="">Provinsi</option>
+                        {
+                            provinsi.map((getprov, index) => {
+                                <option key={index} value={getprov.provinsi_nama}>{getprov.provinsi_nama}</option>
+                            })
+                        }
+                    </select> */}
                     <input className="mb-4 border-2 border-gray-300 rounded-full px-8 py-2 focus:outline-none focus:border-donor-strawberry" placeholder="Provinsi" type="text" onChange={(event) => {newProvinsi(event.target.value)}}/>
                 </div>
                 <div>

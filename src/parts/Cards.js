@@ -39,9 +39,10 @@ const Cards = () => {
                 return (
 
                     <div className="mb-20" key={user.id}>
+                        <center>
             <div className="border-2 shadow-sm w-5/12 items-center pl-2 pt-2 pb-2">
                 <table className="table-auto">
-                    <tbody className="">
+                    <tbody>
                     <tr>
                                             <td>Nama</td>
                                             <td>:</td>
@@ -80,6 +81,7 @@ const Cards = () => {
                     </tbody>
                 </table>
         </div>
+        </center>
                     </div>
                     )
                 })}
