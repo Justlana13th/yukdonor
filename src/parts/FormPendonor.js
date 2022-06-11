@@ -8,7 +8,7 @@ const FormPendonor = () => {
     const [nama, newNama] = useState("")
     const [umur, newUmur] = useState(0)
     const [golonganDarah, newGolonganDarah] = useState("")
-    const [provinsi, newProvinsi] = useState([])
+    const [provinsi, newProvinsi] = useState("")
     const [kecamatan, newKecamatan] = useState("")
     const [kontak, newKontak] = useState(0)
     const [alamat, newAlamat] = useState("")
@@ -22,14 +22,14 @@ const FormPendonor = () => {
         history.push("/list-pendonor");
     }
 
-    useEffect(() => {
-        const getprovinsi = async() => {
-            const resprovinsi = await fetch("https://ibnux.github.io/data-indonesia/provinsi.json");
-            const resprov = await resprovinsi.json();
-            newProvinsi(await resprov);
-        }
-        getprovinsi();
-    },[]);
+    // useEffect(() => {
+    //     const getprovinsi = async() => {
+    //         const resprovinsi = await fetch("https://ibnux.github.io/data-indonesia/provinsi.json");
+    //         const resprov = await resprovinsi.json();
+    //         newProvinsi(await resprov);
+    //     }
+    //     getprovinsi();
+    // },[]);
 
     useEffect(() => {
         const getUsers = async () => {
